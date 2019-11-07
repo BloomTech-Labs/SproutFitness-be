@@ -10,7 +10,7 @@ exports.up = function(knex) {
         coaches.integer('is_active', 1).defaultTo(1)
         coaches.string('language', 128).notNullable()
         coaches.string('timezone', 128).notNullable()
-        coaches.string('bio', 1000)
+        coaches.string('bio', 10000)
     })
 };
 
