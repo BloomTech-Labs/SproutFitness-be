@@ -2,7 +2,7 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 
-const db=require('../database/dbConfig.js')
+const db = require('../database/dbConfig.js')
 const coachesRouter = require('../routes/coach-routes.js')
 
 
@@ -20,7 +20,7 @@ const server=express()
 server.use(helmet());
 server.use(express.json());
 server.use(cors());
-server.use(coachesRouter)
+server.use('/api/coaches',coachesRouter)
 
 
 // ROUTES
