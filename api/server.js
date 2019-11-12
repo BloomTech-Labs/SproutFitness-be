@@ -6,12 +6,9 @@ const db = require('../database/dbConfig.js')
 const coachesRouter = require('../routes/coach-routes.js')
 
 
-
-
 // const register = require('../auth-routes/register.js')
 // const login =require('../auth-routes/login.js')
 // const usersRouter = require('../routes/users-route')
-
 
 
 const server=express()
@@ -21,14 +18,6 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 server.use('/api/coaches',coachesRouter)
-
-
-// ROUTES
-server.get('/', (req, res) => {
-    
-})
-
-
 
 
 // TEST SERVER
