@@ -1,0 +1,37 @@
+{
+  "name": "square1_be",
+  "version": "1.0.0",
+  "description": "Backend repo for Sprout Fitness",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lambda-Labs-PT6-Square1/Square1_BE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lambda-Labs-PT6-Square1/Square1_BE/issues"
+  },
+  "homepage": "https://github.com/Lambda-Labs-PT6-Square1/Square1_BE#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.20.1",
+    "knex-cleaner": "^1.3.0",
+    "node-pre-gyp": "^0.14.0",
+    "sqlite3": "^4.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.4"
+  }
+}
