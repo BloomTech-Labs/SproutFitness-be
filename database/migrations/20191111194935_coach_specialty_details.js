@@ -17,7 +17,7 @@ exports.up = function (knex) {
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
 
-      csd.timestamp()
+      // csd.timestamp()
 
     })
 };
