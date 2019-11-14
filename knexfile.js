@@ -1,3 +1,12 @@
+const localPg = {
+  host: 'localhost',
+  database: 'test',
+  user:'test',
+  password: 'test'
+}
+
+const prodDbConnection = process.env.DATABASE_URL || localPg
+
 module.exports = {
 
   // SQLITE
@@ -21,34 +30,20 @@ module.exports = {
     }
   },
 
-  //POSTGRE SQL
-  // development: {
-  //   client: 'pg',
-  //   useNullAsDefault: true,
-  //   connection: process.env.HEROKU_POSTGRESQL_OLIVE_URL, 
-  //   migrations: {
-  //     directory: './database/migrations',
-  //   },
-  //   seeds: {
-  //     directory: './database/seeds',
-  //   },
-  // },
+  // POSTGRE SQL
+  production: {
+    client: 'pg',
+    useNullAsDefault: true,
+    connection: prodDbConnection,
+    migrations: {
+      directory: './database/migrations',
+    },
+    seeds: {
+      directory: './database/seeds',
+    },
+  },
 
-  // production: {
-  //  // client: 'sqlite3',
-  //  // connection: {
-  //  //   filename: './database/howto.db3',
-  //  // },
-  //  client: 'pg',
-  //  connection: process.env.HEROKU_POSTGRESQL_OLIVE_URL, 
-  //  useNullAsDefault: true,
-  //  migrations: {
-  //    directory: './database/migrations',
-  //  },
-  //  seeds: {
-  //    directory: './database/seeds',
-  //  },
-  // },
+
 
   testing: {
     client: 'sqlite3',
