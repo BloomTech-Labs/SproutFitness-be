@@ -1,7 +1,7 @@
 const localPg = {
   host: 'localhost',
   database: 'test',
-  user:'test',
+  user: 'test',
   password: 'test'
 }
 
@@ -42,7 +42,6 @@ module.exports = {
       directory: './database/seeds',
     },
   },
-
 
 
   testing: {
