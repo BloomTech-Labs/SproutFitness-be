@@ -15,10 +15,6 @@ exports.seed = function(knex) {
           language: 'english',
           password: 'test',
           picture_url: 'https://fakepersongenerator.com/Face/female/female20161024805263550.jpg',
-
-          certifications: 'NSHC – National Society of Health Coaches, American Council on Exercise (ACE)',
-          awards: 'Best Coach of the Year 2019',
-          specialties: 'Fitness',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
           is_active: 1
         },
@@ -32,10 +28,6 @@ exports.seed = function(knex) {
           country: 'USA',
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/female/female20161024634585480.jpg',
-          
-          certifications: 'NSHC – National Society of Health Coaches, American Council on Exercise (ACE)',
-          awards: 'Best Coach of the Year 2019',
-          specialties: 'Fitness',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
           is_active: 1
         },
@@ -49,10 +41,6 @@ exports.seed = function(knex) {
           country: 'USA',
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/male/male1084474628235.jpg',
-          
-          certifications: 'NSHC – National Society of Health Coaches, American Council on Exercise (ACE)',
-          awards: 'Best Coach of the Year 2019',
-          specialties: 'Fitness',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
           is_active: 1
         },
@@ -66,10 +54,6 @@ exports.seed = function(knex) {
           country: 'USA',
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/female/female20161025483166199.jpg',
-          
-          certifications: 'NSHC – National Society of Health Coaches, American Council on Exercise (ACE)',
-          awards: 'Best Coach of the Year 2019',
-          specialties: 'Fitness',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
           is_active: 1
         },
@@ -83,10 +67,6 @@ exports.seed = function(knex) {
           country: 'USA',
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/male/male20161086693679535.jpg',
-          
-          certifications: 'NSHC – National Society of Health Coaches, American Council on Exercise (ACE)',
-          awards: 'Best Coach of the Year 2019',
-          specialties: 'Fitness',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
           is_active: 1
         },
@@ -100,10 +80,6 @@ exports.seed = function(knex) {
           country: 'USA',
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/female/female20161025181176880.jpg',
-          
-          certifications: 'NSHC – National Society of Health Coaches, American Council on Exercise (ACE)',
-          awards: 'Best Coach of the Year 2019',
-          specialties: 'Fitness',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
           is_active: 1
         },
@@ -117,10 +93,6 @@ exports.seed = function(knex) {
           country: 'USA',
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/male/male1084200952026.jpg',
-          
-          certifications: 'NSHC – National Society of Health Coaches, American Council on Exercise (ACE)',
-          awards: 'Best Coach of the Year 2019',
-          specialties: 'Fitness',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
           is_active: 1
         },
@@ -134,10 +106,6 @@ exports.seed = function(knex) {
           country: 'USA',
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/female/female1023246516449.jpg',
-          
-          certifications: 'NSHC – National Society of Health Coaches, American Council on Exercise (ACE)',
-          awards: 'Best Coach of the Year 2019',
-          specialties: 'Fitness',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
           is_active: 1
         },
@@ -151,10 +119,6 @@ exports.seed = function(knex) {
           country: 'USA',
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/male/male1084281133454.jpg',
-          
-          certifications: 'NSHC – National Society of Health Coaches, American Council on Exercise (ACE)',
-          awards: 'Best Coach of the Year 2019',
-          specialties: 'Fitness',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
           is_active: 1
         },
@@ -168,10 +132,6 @@ exports.seed = function(knex) {
           country: 'USA',
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/male/male20161083836272461.jpg',
-          
-          certifications: 'NSHC – National Society of Health Coaches, American Council on Exercise (ACE)',
-          awards: 'Best Coach of the Year 2019',
-          specialties: 'Fitness',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
           is_active: 1
         },
