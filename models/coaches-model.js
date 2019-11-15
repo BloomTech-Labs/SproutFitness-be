@@ -21,12 +21,20 @@ function findById(id) {
     return db('coaches').where({id}).first()
 }
 
-function add(coach) {
-    return db('coaches').insert(coach)
-        .then(ids => {
-            return findById(ids[0]) // returns the newly added record
-        })
-}
+// IF USING SQLITE
+// function add(coach) {
+//     return db('coaches').insert(coach)
+//         .then(ids => {
+//             return findById(ids[0]) // returns the newly added record
+//         })
+// }
+
+// IF USING PostgreSQL
+async function add(coach) {
+    const [item] = await db('coaches').insert(coach)
+      .returning('*')
+    return item
+  }
 
 async function deleteById(id) {
     try {
