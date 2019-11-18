@@ -30,11 +30,20 @@ function findById(id) {
 // }
 
 // IF USING PostgreSQL
-async function add(coach) {
-    const [item] = await db('coaches').insert(coach)
-      .returning('*')
-    return item
-  }
+// async function add(coach) {
+//     const [item] = await db('coaches').insert(coach)
+//       .returning('*')
+//     return item
+//  }
+
+ function add(coach) {
+    return db('coaches')
+      .insert(coach, 'id')
+      .then(ids => {
+        const [id] = ids;
+        return findById(id);
+      });
+ }
 
 async function deleteById(id) {
     try {
