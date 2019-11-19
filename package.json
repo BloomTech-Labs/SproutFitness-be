@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/Lambda-Labs-PT6-Square1/Square1_BE#readme",
   "dependencies": {
-    "bcrypt": "^3.0.6",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "cross-env": "^6.0.3",
     "dotenv": "^8.2.0",

@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const Coaches = require('../models/coaches-model')
+// const protect = require('../middleware/protected.js')
 
 // Get ALL Coaches - Test route
 router.get('/', (req, res) => {
