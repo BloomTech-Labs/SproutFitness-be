@@ -1,4 +1,4 @@
-const db = require('../database/dbConfig.js');
+const db = require('../database/dbConfig');
 
 module.exports = {
   findAll,
@@ -10,22 +10,22 @@ module.exports = {
 };
 
 function findAll() {
-  return db('coaches');
+  return db('coach_specialty_details');
 }
 
 function findBy(filter) {
-  return db('coaches').where(filter);
+  return db('coach_specialty_details').where(filter);
 }
 
 function findById(id) {
-  return db('coaches')
+  return db('coach_specialty_details')
     .where({ id })
     .first();
 }
 
-function add(coach) {
-  return db('coaches')
-    .insert(coach, 'id')
+function add(csd) {
+  return db('coach_specialty_details')
+    .insert(csd, 'id')
     .then(ids => {
       const [id] = ids;
       return findById(id);
@@ -34,10 +34,10 @@ function add(coach) {
 
 async function deleteById(id) {
   try {
-    const delCoachCount = await db('coaches')
+    const delCSDCount = await db('coach_specialty_details')
       .where({ id })
       .del();
-    return delCoachCount;
+    return delCSDCount;
   } catch (error) {
     return {
       code: error.code,
@@ -47,12 +47,12 @@ async function deleteById(id) {
   }
 }
 
-async function updateById(id, coach) {
+async function updateById(id, csd) {
   try {
-    const updatedCoachCount = await db('coaches')
+    const updatedCSDCount = await db('coach_specialty_details')
       .where({ id })
-      .update(coach);
-    return updatedCoachCount;
+      .update(csd);
+    return updatedCSDCount;
   } catch (error) {
     return {
       code: error.code,

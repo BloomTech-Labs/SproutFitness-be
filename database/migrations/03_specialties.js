@@ -1,24 +1,16 @@
-exports.up = function (knex) {
-  return knex.schema
-    .createTable('specialties', specialty => {
-      specialty.increments()
-      specialty
-        .integer('coach_id')
-        .notNullable()
-        .references('id')
-        .inTable('coaches')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE')
+exports.up = function(knex) {
+  return knex.schema.createTable('specialties', specialty => {
+    specialty.increments();
 
-      specialty
-        .string('name').notNullable().unique()
+    specialty
+      .string('name')
+      .notNullable()
+      .unique();
 
-      specialty
-        .string('icon_url')
-    })
+    specialty.string('icon_url');
+  });
 };
 
-exports.down = function (knex) {
-  return knex.schema
-    .dropTableIfExists('specialties')
+exports.down = function(knex) {
+  return knex.schema.dropTableIfExists('specialties');
 };

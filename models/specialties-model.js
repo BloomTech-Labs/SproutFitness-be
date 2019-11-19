@@ -1,4 +1,4 @@
-const db = require('../database/dbConfig.js');
+const db = require('../database/dbConfig');
 
 module.exports = {
   findAll,
@@ -10,22 +10,22 @@ module.exports = {
 };
 
 function findAll() {
-  return db('coaches');
+  return db('specialties');
 }
 
 function findBy(filter) {
-  return db('coaches').where(filter);
+  return db('specialties').where(filter);
 }
 
 function findById(id) {
-  return db('coaches')
+  return db('specialties')
     .where({ id })
     .first();
 }
 
-function add(coach) {
-  return db('coaches')
-    .insert(coach, 'id')
+function add(specialty) {
+  return db('specialties')
+    .insert(specialty, 'id')
     .then(ids => {
       const [id] = ids;
       return findById(id);
@@ -34,10 +34,10 @@ function add(coach) {
 
 async function deleteById(id) {
   try {
-    const delCoachCount = await db('coaches')
+    const delSpecialtyCount = await db('specialties')
       .where({ id })
       .del();
-    return delCoachCount;
+    return delSpecialtyCount;
   } catch (error) {
     return {
       code: error.code,
@@ -47,12 +47,12 @@ async function deleteById(id) {
   }
 }
 
-async function updateById(id, coach) {
+async function updateById(id, specialty) {
   try {
-    const updatedCoachCount = await db('coaches')
+    const updatedSpecialtyCount = await db('specialties')
       .where({ id })
-      .update(coach);
-    return updatedCoachCount;
+      .update(specialty);
+    return updatedSpecialtyCount;
   } catch (error) {
     return {
       code: error.code,
