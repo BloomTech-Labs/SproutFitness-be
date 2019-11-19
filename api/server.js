@@ -2,10 +2,10 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 
-const db = require('../database/dbConfig.js');
 const coachesRouter = require('../routes/coach-routes.js');
 const coachCertsRouter = require('../routes/coach-certifications-routes');
 const specialtiesRouter = require('../routes/specialties-routes');
+const CoachSpecialtyDetailsRouter = require('../routes/coach-specialty-details-routes');
 // const register = require('../auth-routes/register.js')
 // const login =require('../auth-routes/login.js')
 // const usersRouter = require('../routes/users-route')
@@ -16,9 +16,12 @@ const server = express();
 server.use(helmet());
 server.use(express.json());
 server.use(cors());
+
+// Routes
 server.use('/api/coaches', coachesRouter);
 server.use('/api/coach_certifications', coachCertsRouter);
 server.use('/api/specialties', specialtiesRouter);
+server.use('/api/coach_specialty_details', CoachSpecialtyDetailsRouter);
 
 // TEST SERVER
 server.get('/', (req, res) => {
