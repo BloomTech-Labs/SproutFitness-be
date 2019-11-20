@@ -6,7 +6,10 @@ module.exports = {
   findById,
   add,
   deleteById,
-  updateById
+  updateById,
+
+  // QoL functions
+  getCoachInfoById
 };
 
 function findAll() {
@@ -53,6 +56,33 @@ async function updateById(id, coach) {
       .where({ id })
       .update(coach);
     return updatedCoachCount;
+  } catch (error) {
+    return {
+      code: error.code,
+      errno: error.errno,
+      message: error.message
+    };
+  }
+}
+
+async function getCoachInfoById(id) {
+  try {
+    
+    const coach = await findById(id)
+    const specialties = await 
+      db('coach_specialty_details as csd')
+      .join('specialties as s', 'csd.specialty_id', '=', 's.id')
+      .select('*')
+      .where('csd.coach_id', id)
+
+    const certifications = await db('coach_certifications').where('coach_id', id)
+
+    return {
+      coach,
+      specialties,
+      certifications
+    }
+
   } catch (error) {
     return {
       code: error.code,
