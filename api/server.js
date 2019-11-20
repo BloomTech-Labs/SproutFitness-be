@@ -9,7 +9,7 @@ const CoachSpecialtyDetailsRouter = require('../routes/coach-specialty-details-r
 const register = require('../auth-routes/register')
 const login = require('../auth-routes/login')
 
-const coachHelpersRouter = require('../routes/coach-helers-router')
+const coachHelpersRouter = require('../routes/coach-helpers-router')
 
 const server = express();
 

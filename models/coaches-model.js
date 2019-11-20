@@ -9,7 +9,8 @@ module.exports = {
   updateById,
 
   // QoL functions
-  getCoachInfoById
+  getCoachInfoById,
+  getCoachSpecsById
 };
 
 function findAll() {
@@ -82,6 +83,27 @@ async function getCoachInfoById(id) {
       specialties,
       certifications
     }
+
+  } catch (error) {
+    return {
+      code: error.code,
+      errno: error.errno,
+      message: error.message
+    };
+  }
+}
+
+// GET COACH SPECIALTIES BY ID
+async function getCoachSpecsById(id) {
+  try {
+   
+    const specialties = await db('coach_specialty_details as csd')
+
+      .join('specialties as s', 'csd.specialty_id', 's.id')
+      .select('*')
+      .where('csd.coach_id', id)
+
+    return { specialties }
 
   } catch (error) {
     return {
