@@ -17,12 +17,12 @@ server.use(express.json());
 server.use(cors());
 
 // Routes
-server.use('/api/coaches', coachesRouter);
-server.use('/api/coach_certifications', coachCertsRouter);
+server.use('/api/coaches/register', register);
+server.use('/api/coaches/login', login);
 server.use('/api/specialties', specialtiesRouter);
-server.use('/api/coach_specialty_details', CoachSpecialtyDetailsRouter);
-server.use('/api/register', register);
-server.use('/api/login', login);
+server.use('/api/coaches', coachesRouter);
+server.use('/api/coaches/coach_certifications', coachCertsRouter);
+server.use('/api/coaches/coach_specialty_details', CoachSpecialtyDetailsRouter);
 
 // TEST SERVER
 server.get('/', (req, res) => {
