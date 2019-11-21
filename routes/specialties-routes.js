@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const Specialties = require('../models/specialties-model');
 
+
 // Get ALL Specialties - Test route
 router.get('/', (req, res) => {
   Specialties.findAll()
@@ -14,6 +15,7 @@ router.get('/', (req, res) => {
       });
     });
 });
+
 
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
@@ -82,5 +84,8 @@ router.delete('/:id', async (req, res) => {
     });
   }
 });
+
+
+
 
 module.exports = router;

@@ -9,6 +9,8 @@ const CoachSpecialtyDetailsRouter = require('../routes/coach-specialty-details-r
 const register = require('../auth-routes/register')
 const login = require('../auth-routes/login')
 
+const coachHelpersRouter = require('../routes/coach-helpers-router')
+
 const server = express();
 
 // 3rd PARTY MIDDLEWARE
@@ -23,6 +25,8 @@ server.use('/api/specialties', specialtiesRouter);
 server.use('/api/coaches', coachesRouter);
 server.use('/api/coach_certifications', coachCertsRouter);
 server.use('/api/coach_specialty_details', CoachSpecialtyDetailsRouter);
+
+server.use('/api/coach_helpers', coachHelpersRouter)
 
 // TEST SERVER
 server.get('/', (req, res) => {
