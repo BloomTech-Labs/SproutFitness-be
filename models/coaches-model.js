@@ -10,7 +10,8 @@ module.exports = {
 
   // QoL functions
   getCoachInfoById,
-  getCoachSpecsById
+  getCoachSpecsById,
+  getCoachesOrderedBy
 };
 
 function findAll() {
@@ -66,6 +67,7 @@ async function updateById(id, coach) {
   }
 }
 
+// Returns an object with the coach record, along with their specialties and certifications.
 async function getCoachInfoById(id) {
   try {
     
@@ -92,6 +94,27 @@ async function getCoachInfoById(id) {
     };
   }
 }
+
+// Returns coach ordered by specified column and direction
+async function getCoachesOrderedBy(column, direction) {
+  try {
+    if(!direction) {
+      const coaches = await db('coaches').orderBy(column)
+      return coaches
+    } else {
+      const coaches = await db('coaches').orderBy(column, direction)
+      return coaches
+    }    
+
+  } catch (error) {
+    return {
+      code: error.code,
+      errno: error.errno,
+      message: error.message
+    }
+  }
+}
+
 
 // GET COACH SPECIALTIES BY ID
 async function getCoachSpecsById(id) {
