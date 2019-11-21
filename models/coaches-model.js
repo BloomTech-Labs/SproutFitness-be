@@ -23,7 +23,9 @@ function findBy(filter) {
 
 function findById(id) {
   return db('coaches')
-    .where({ id })
+    .where({
+      id
+    })
     .first();
 }
 
@@ -39,7 +41,9 @@ function add(coach) {
 async function deleteById(id) {
   try {
     const delCoachCount = await db('coaches')
-      .where({ id })
+      .where({
+        id
+      })
       .del();
     return delCoachCount;
   } catch (error) {
@@ -54,7 +58,9 @@ async function deleteById(id) {
 async function updateById(id, coach) {
   try {
     const updatedCoachCount = await db('coaches')
-      .where({ id })
+      .where({
+        id
+      })
       .update(coach);
     return updatedCoachCount;
   } catch (error) {
@@ -68,10 +74,10 @@ async function updateById(id, coach) {
 
 async function getCoachInfoById(id) {
   try {
-    
+
     const coach = await findById(id)
-    const specialties = await 
-      db('coach_specialty_details as csd')
+    const specialties = await
+    db('coach_specialty_details as csd')
       .join('specialties as s', 'csd.specialty_id', '=', 's.id')
       .select('*')
       .where('csd.coach_id', id)
@@ -93,10 +99,10 @@ async function getCoachInfoById(id) {
   }
 }
 
-// GET COACH SPECIALTIES BY ID
+// GET COACH SPECIALTIES (BY COACH ID)
 async function getCoachSpecsById(id) {
   try {
-   
+
     const specialties = await db('coach_specialty_details as csd')
 
       .join('specialties as s', 'csd.specialty_id', 's.id')
@@ -113,3 +119,5 @@ async function getCoachSpecsById(id) {
     };
   }
 }
+
+
