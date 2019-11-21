@@ -10,7 +10,9 @@ module.exports = {
 
   // QoL functions
   getCoachInfoById,
-  getCoachSpecsById
+  getCoachSpecsByCoachId,
+  getCoachesBySpecsId,
+
 };
 
 function findAll() {
@@ -123,7 +125,7 @@ async function getCoachInfoById(id) {
 
 // GET COACH SPECIALTIES (BY COACH ID)
 // SAME AS ABOVE: BOTH ENDPOINTS ARE WORKING THE SAME
-function getCoachSpecsById(id) {
+function getCoachSpecsByCoachId(id) {
   return db('coach_specialty_details as csd')
     .join('specialties as s', 'csd.specialty_id',  's.id')
     .select('*')
@@ -131,4 +133,10 @@ function getCoachSpecsById(id) {
 }
 
 
-
+// GET ALL COACHES WITH SPECIFIED SPECIALTY (BY SPECIALTY ID)
+function getCoachesBySpecsId(id) {
+  return db('coach_specialty_details as csd')
+    .join('coaches', 'csd.coach_id',  'coaches.id')
+    .select('*')
+    .where('csd.specialty_id', id)
+}
