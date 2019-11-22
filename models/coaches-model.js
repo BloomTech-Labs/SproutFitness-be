@@ -10,7 +10,9 @@ module.exports = {
 
   // QoL functions
   getCoachInfoById,
-  getCoachSpecsById
+  getCoachSpecsByCoachId,
+  getCoachesBySpecsId,
+
 };
 
 function findAll() {
@@ -100,24 +102,41 @@ async function getCoachInfoById(id) {
 }
 
 // GET COACH SPECIALTIES (BY COACH ID)
-async function getCoachSpecsById(id) {
-  try {
+// async function getCoachSpecsById(id) {
+//   try {
 
-    const specialties = await db('coach_specialty_details as csd')
+//     const specialties = await db('coach_specialty_details as csd')
 
-      .join('specialties as s', 'csd.specialty_id', 's.id')
-      .select('*')
-      .where('csd.coach_id', id)
+//       .join('specialties as s', 'csd.specialty_id', 's.id')
+//       .select('*')
+//       .where('csd.coach_id', id)
 
-    return { specialties }
+//     return { specialties }
 
-  } catch (error) {
-    return {
-      code: error.code,
-      errno: error.errno,
-      message: error.message
-    };
-  }
+//   } catch (error) {
+//     return {
+//       code: error.code,
+//       errno: error.errno,
+//       message: error.message
+//     };
+//   }
+// }
+
+
+// GET COACH SPECIALTIES (BY COACH ID)
+// SAME AS ABOVE: BOTH ENDPOINTS ARE WORKING THE SAME
+function getCoachSpecsByCoachId(id) {
+  return db('coach_specialty_details as csd')
+    .join('specialties as s', 'csd.specialty_id',  's.id')
+    .select('*')
+    .where('csd.coach_id', id)
 }
 
 
+// GET ALL COACHES WITH SPECIFIED SPECIALTY (BY SPECIALTY ID)
+function getCoachesBySpecsId(id) {
+  return db('coach_specialty_details as csd')
+    .join('coaches', 'csd.coach_id',  'coaches.id')
+    .select('*')
+    .where('csd.specialty_id', id)
+}
