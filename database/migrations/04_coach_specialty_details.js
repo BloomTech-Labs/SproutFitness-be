@@ -17,7 +17,8 @@ exports.up = function (knex) {
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
 
-      // csd.timestamp()
+      csd
+        .timestamp('created_at').defaultTo(knex.fn.now());
 
     })
 };
@@ -26,6 +27,3 @@ exports.down = function (knex) {
   return knex.schema
     .dropTableIfExists('coach_specialty_details')
 };
-
-
-

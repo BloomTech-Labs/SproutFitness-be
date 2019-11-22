@@ -9,7 +9,7 @@ exports.up = function(knex) {
       .onDelete('CASCADE')
       .onUpdate('CASCADE');
     certification.string('name').notNullable();
-    certification.timestamp(true, true);
+    certification.timestamp('created_at').defaultTo(knex.fn.now());
   });
 };
 
