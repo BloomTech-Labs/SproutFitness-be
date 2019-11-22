@@ -10,9 +10,9 @@ module.exports = {
 
   // QoL functions
   getCoachInfoById,
+  getCoachesOrderedBy,
   getCoachSpecsByCoachId,
   getCoachesBySpecsId,
-
 };
 
 function findAll() {
@@ -74,6 +74,7 @@ async function updateById(id, coach) {
   }
 }
 
+// Returns an object with the coach record, along with their specialties and certifications.
 async function getCoachInfoById(id) {
   try {
 
@@ -101,30 +102,28 @@ async function getCoachInfoById(id) {
   }
 }
 
+// Returns coach ordered by specified column and direction
+async function getCoachesOrderedBy(column, direction) {
+  try {
+    if(!direction) {
+      const coaches = await db('coaches').orderBy(column)
+      return coaches
+    } else {
+      const coaches = await db('coaches').orderBy(column, direction)
+      return coaches
+    }    
+
+  } catch (error) {
+    return {
+      code: error.code,
+      errno: error.errno,
+      message: error.message
+    }
+  }
+}
+
+
 // GET COACH SPECIALTIES (BY COACH ID)
-// async function getCoachSpecsById(id) {
-//   try {
-
-//     const specialties = await db('coach_specialty_details as csd')
-
-//       .join('specialties as s', 'csd.specialty_id', 's.id')
-//       .select('*')
-//       .where('csd.coach_id', id)
-
-//     return { specialties }
-
-//   } catch (error) {
-//     return {
-//       code: error.code,
-//       errno: error.errno,
-//       message: error.message
-//     };
-//   }
-// }
-
-
-// GET COACH SPECIALTIES (BY COACH ID)
-// SAME AS ABOVE: BOTH ENDPOINTS ARE WORKING THE SAME
 function getCoachSpecsByCoachId(id) {
   return db('coach_specialty_details as csd')
     .join('specialties as s', 'csd.specialty_id',  's.id')
