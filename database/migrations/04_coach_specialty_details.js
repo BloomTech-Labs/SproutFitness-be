@@ -26,3 +26,6 @@ exports.down = function (knex) {
   return knex.schema
     .dropTableIfExists('coach_specialty_details')
 };
+
+
+
