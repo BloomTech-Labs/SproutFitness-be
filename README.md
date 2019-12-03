@@ -31,7 +31,7 @@ Reasons we chose Express JS with PostreSQL
 | GET    | `/api/coach_helpers/coach/data/:coachId` |  Returns a coach along with their specialties and certifications. |
 | GET    | `/api/coach_helpers/coach/specs/:id` |  Returns a coach's specialties by coachId  |
 | GET    | `/api/coach_helpers/spec/coaches/:specialtyId` |  Returns a list of coaches with a given specialty ID  |
-| GET    | `/api/coach_helpers/coach/list&column=<column name>&direction=<desc or asc>` |  Returns a list of coaches ordered by specified column and direction in url query  |
+| GET    | `/api/coach_helpers/coach/list?&column=<column name>&direction=<desc or asc>` |  Returns a list of coaches ordered by specified column and direction in url query  |
 | PUT    | `/api/coaches/:coachId` |  Update a coach by given coach ID.             |
 | DELETE | `/api/coaches/:coachId` |  Delete a Coach.                      |
 
