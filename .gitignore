@@ -61,3 +61,6 @@ typings/
 .next
 
 yarn.lock
+
+# Sqlite3 database files
+*.sqlite3
