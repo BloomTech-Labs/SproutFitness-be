@@ -5,19 +5,15 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex('specialties').insert([
         {
-          name: 'Health coach',
+          name: 'Holistic',
           icon_url: 'link'
         },
         {
-          name: 'Holistic health coach',
+          name: 'Wellness',
           icon_url: 'link'
         },
         {
-          name: 'Wellness health coach',
-          icon_url: 'link'
-        },
-        {
-          name: 'Primal/Paleo health coach',
+          name: 'Primal/Paleo',
           icon_url: 'link'
         },
       ]);
