@@ -1,94 +1,200 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline. Feel free to add your own flare to it.
-
-🚫 The numbers 1️⃣ through 3️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
-
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric.  Contributing to docs does NOT count as a PR to meet your weekly requirements.
-
 # API Documentation
 
-#### 1️⃣ Backend delpoyed at [🚫name service here](🚫add URL here) <br>
+#### 1️⃣ Backend delpoyed at [Heroku](https://sprout-fitness-be-prod.herokuapp.com/) <br>
 
 ## 1️⃣ Getting started
 
 To get the server running locally:
 
-🚫 adjust these scripts to match your project
 
 - Clone this repo
-- **yarn install** to install all required dependencies
-- **yarn server** to start the local server
-- **yarn test** to start server using testing environment
+- **npm install** to install all required dependencies
+- **npm start server** to start the local server
+- **npm test** to start server using testing environment
 
-### Backend framework goes here
+### Express JS with PostgreSQL
 
-🚫 Why did you choose this framework?
+Reasons we chose Express JS with PostreSQL
 
--    Point One
--    Point Two
--    Point Three
--    Point Four
+-    Familiarity
+-    Very common in real world
+-    Relational DB
 
 ## 2️⃣ Endpoints
 
-🚫This is a placeholder, replace the endpoints, access controll, and descriptioin to match your project
+### Helper Routes
+-  These routes return multiple objects which might be useful to prevent having to make multiple requests to the server.
 
-#### Organization Routes
 
-| Method | Endpoint                | Access Control | Description                                  |
-| ------ | ----------------------- | -------------- | -------------------------------------------- |
-| GET    | `/organizations/:orgId` | all users      | Returns the information for an organization. |
-| PUT    | `/organizatoins/:orgId` | owners         | Modify an existing organization.             |
-| DELETE | `/organizations/:orgId` | owners         | Delete an organization.                      |
+| Method | Endpoint               | Description                                  |
+| ------ | -----------------------| ---------------------------------------------------------- |
+| GET    | `/api/coach_helpers/coach/data/:coachId` |  Returns a coach along with their specialties and certifications. |
+| GET    | `/api/coach_helpers/coach/specs/:id` |  Returns a coach's specialties by coachId  |
+| GET    | `/api/coach_helpers/spec/coaches/:specialtyId` |  Returns a list of coaches with a given specialty ID  |
+| GET    | `/api/coach_helpers/coach/list&column=<column name>&direction=<desc or asc>` |  Returns a list of coaches ordered by specified column and direction in url query  |
+| PUT    | `/api/coaches/:coachId` |  Update a coach by given coach ID.             |
+| DELETE | `/api/coaches/:coachId` |  Delete a Coach.                      |
 
-#### User Routes
+---
+
+### Coaches Table Routes
+
+| Method | Endpoint               | Description                                  |
+| ------ | -----------------------| ---------------------------------------------------------- |
+| GET    | `/api/coaches` |  Returns all the coaches in the coaches table. |
+| GET    | `/api/coaches/:coachId` |  Returns all a coach with given coach ID. |
+| POST   | `/api/coaches/` | NA | Create a Coach record |
+| PUT    | `/api/coaches/:coachId` |  Update a coach by given coach ID.             |
+| DELETE | `/api/coaches/:coachId` |  Delete a Coach.                      |
+
+
+#### POST Request Body Example (create or update)
+```
+{
+  "id": 1,
+  "email": "test@test.com",
+  "password": "test",
+  "firstname": "Latrina",
+  "lastname": "Huang",
+  "is_active": 1,
+  "language": "english",
+  "timezone": "central",
+  "picture_url": "https://fakepersongenerator.com/Face/female/female20161024805263550.jpg",
+  "city": "Cedar Rapids",
+  "country": "USA",
+  "bio": "Bio."
+}
+```
+---
+
+### Coach Certification Routes
 
 | Method | Endpoint                | Access Control      | Description                                        |
 | ------ | ----------------------- | ------------------- | -------------------------------------------------- |
-| GET    | `/users/current`        | all users           | Returns info for the logged in user.               |
-| GET    | `/users/org/:userId`    | owners, supervisors | Returns all users for an organization.             |
-| GET    | `/users/:userId`        | owners, supervisors | Returns info for a single user.                    |
-| POST   | `/users/register/owner` | none                | Creates a new user as owner of a new organization. |
-| PUT    | `/users/:userId`        | owners, supervisors |                                                    |
-| DELETE | `/users/:userId`        | owners, supervisors |                                                    |
+| GET    | `/api/coach_certifications` | NA | Get All the Coach Certifications on the server.               |
+| POST   | `/api/coach_certifications/` | NA | Create a Coach certification realted to a coach (coach ID supplied in request body). |
+| PUT    | `/api/coach_certifications/:coachId` | NA |                                                    |
+| DELETE | `/api/coach_certifications/:coachId` | NA|         |
+
+#### POST Request Body Example (create or update)
+```
+{
+  "name": "Certification Name",
+  "coach_id": 1
+}
+```
+---
+
+### Specialties Routes
+
+Specialties created by dev team a Coach can select from and as
+
+| Method | Endpoint                | Access Control      | Description                                        |
+| ------ | ----------------------- | ------------------- | -------------------------------------------------- |
+| GET    | `/api/specialties` | NA | Get All the Specialties on the database.               |
+| GET    | `/api/specialties/:specialtyId` | NA | Get All the Specialties by specialty ID.               |
+| POST   | `/api/specialties` | NA | Create a new specialty |
+| PUT    | `/api/specialties/:specialtyId` | NA |                                                    |
+| DELETE | `/api/specialties/:specialtyId` | NA |         |
+
+##### POST Request Body Example (create or update)
+```
+{
+    "name": "Health"
+}
+```
+---
+
+### Coach Specialties Details Routes
+
+Relationship table for Specialties > Coach.
+
+Each specialty a Coach has is a record in this table.
+
+| Method | Endpoint                | Access Control      | Description                                        |
+| ------ | ----------------------- | ------------------- | -------------------------------------------------- |
+| GET    | `/api/coach_specialty_details` | NA | Get All the coach_specialty_detail records on the database.               |
+| GET    | `/api/coach_specialty_details/:coach_specialy_detialId` | NA | Get a coach_specialty_detail by record ID.               |
+| POST   | `/api/coach_specialty_details` | NA | Create a new coach specialty detail record (a new relationship) |
+| PUT    | `/api/coach_specialty_details/:coach_specialy_detialId` | NA |                                                    |
+| DELETE | `/api/coach_specialty_details/:coach_specialy_detialId` | NA |         |
+
+
+##### POST Request Body Example (create or update)
+```
+{
+  "coach_id": 1,
+  "specialty_id": 3
+}
+```
+---
 
 # Data Model
 
-🚫This is just an example. Replace this with your data model
+### COACHES
+---
 
-#### 2️⃣ ORGANIZATIONS
+```
+{
+  "id": 1,
+  "email": "test@test.com",
+  "password": "test",
+  "firstname": "Latrina",
+  "lastname": "Huang",
+  "is_active": 1,
+  "language": "english",
+  "timezone": "central",
+  "picture_url": "https://fakepersongenerator.com/Face/female/female20161024805263550.jpg",
+  "city": "Cedar Rapids",
+  "country": "USA",
+  "bio": "Bio."
+}
+```
+
+### COACH CERTIFICATIONS
 
 ---
 
 ```
 {
-  id: UUID
-  name: STRING
-  industry: STRING
-  paid: BOOLEAN
-  customer_id: STRING
-  subscription_id: STRING
+  "id": 1,
+  "coach_id": 1,
+  "name": "NSHC – National Society of Health Coaches",
+  "created_at": "2019-12-03T01:18:17.728Z"
 }
 ```
 
-#### USERS
+### SPECIALTIES
 
 ---
 
 ```
 {
-  id: UUID
-  organization_id: UUID foreign key in ORGANIZATIONS table
-  first_name: STRING
-  last_name: STRING
-  role: STRING [ 'owner', 'supervisor', 'employee' ]
-  email: STRING
-  phone: STRING
-  cal_visit: BOOLEAN
-  emp_visit: BOOLEAN
-  emailpref: BOOLEAN
-  phonepref: BOOLEAN
+  "id": 1,
+  "name": "Holistic",
+  "icon_url": "link"
 }
+
 ```
+
+### COACH SPECIALTIES DETAILS
+ ---
+
+ ```
+{
+  "id": 1,
+  "coach_id": 1,
+  "specialty_id": 1,
+  "created_at": "2019-12-03T01:18:17.755Z"
+}
+
+ ```
+
+
+
+
+
+# DISREGARD ANYTHING BELOW THIS LINE
 
 ## 2️⃣ Actions
 
