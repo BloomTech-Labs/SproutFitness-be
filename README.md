@@ -22,6 +22,13 @@ Reasons we chose Express JS with PostreSQL
 
 ## 2️⃣ Endpoints
 
+
+| Method | Endpoint               | Description                                  |
+| ------ | -----------------------| ---------------------------------------------------------- |
+| POST    | `/api/login/coaches` |  Returns id, token and welcome message. |
+| POST    | `/api/register/coaches` |  Returns id, token and welcome message.   |
+
+
 ### Helper Routes
 -  These routes return multiple objects which might be useful to prevent having to make multiple requests to the server.
 
@@ -46,6 +53,8 @@ Reasons we chose Express JS with PostreSQL
 | POST   | `/api/coaches/` | NA | Create a Coach record |
 | PUT    | `/api/coaches/:coachId` |  Update a coach by given coach ID.             |
 | DELETE | `/api/coaches/:coachId` |  Delete a Coach.                      |
+| POST   | `/api/login/coaches` |  Returns id, token and welcome message. |
+| POST   | `/api/register/coaches` |  Returns id, token and welcome message.   |
 
 
 #### POST Request Body Example (create or update)
