@@ -1,9 +1,9 @@
 const router = require('express').Router()
 const Coaches = require('../models/coaches-model')
-// const protect = require('../middleware/protected.js')
+const protect = require('../middleware/protected.js')
 
 // Get ALL Coaches - Test route
-router.get('/', (req, res) => {
+router.get('/', protect, (req, res) => {
     Coaches.findAll()
         .then(coaches => {
             res.status(200).json(coaches)
