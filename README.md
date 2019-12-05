@@ -218,8 +218,6 @@ Each specialty a Coach has is a record in this table.
 `deleteById(id)` -> Delete an item by ID
 
 <br>
-<br>
-<br>
 
 `getCoachInfoById(id)` -> Returns an object with the coach record, along with their specialties and certifications.
 
@@ -230,7 +228,9 @@ Each specialty a Coach has is a record in this table.
 `getCoachesBySpecsId(id)` -> Returns all coaches with specified specialty by specialty ID
 
 
+
 # DISREGARD ANYTHING BELOW THIS LINE
+
 
 
 ## 3️⃣ Environment Variables
