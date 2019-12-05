@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const CSD = require('../models/coach-specialty-details-model');
+const uuidv4 = require('uuid/v4')
 
 // Get ALL Certs - Test route
 router.get('/', (req, res) => {
@@ -35,6 +36,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const csd = req.body;
+  csd.id = uuidv4()
   try {
     const newCSD = await CSD.add(csd);
     res.status(201).json(newCSD);

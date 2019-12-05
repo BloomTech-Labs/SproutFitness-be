@@ -5,16 +5,16 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex('coach_specialty_details').insert([
         {
-          coach_id: 1,
-          specialty_id: 1
+          coach_id: '545asd45x5x5x5x',
+          specialty_id: '2344sdsdmn-asd-xxccc-1'
         },
         {
-          coach_id: 2,
-          specialty_id: 2
+          coach_id: '545232323x5x5x',
+          specialty_id: '2344sdsdmn-asd-xxccc-2'
         },
         {
-          coach_id: 3,
-          specialty_id: 2
+          coach_id: 'tyutyu',
+          specialty_id: '2344sdsdmn-asd-xxccc-3'
         },
 
       ]);
