@@ -203,36 +203,35 @@ Each specialty a Coach has is a record in this table.
  ```
 
 
+## 2️⃣ Actions (Models)
+
+`findAll()` -> Returns all data from the specified table
+
+`findBy(filter)` -> Returns a single item by specified filter
+
+`findById(id)` -> Returns a single item by ID
+
+`add(item)` -> Returns the created object data
+
+`updateById(id)` -> Update an item by ID.
+
+`deleteById(id)` -> Delete an item by ID
+
+<br>
+
+`getCoachInfoById(id)` -> Returns an object with the coach record, along with their specialties and certifications.
+
+`getCoachesOrderedBy(column, direction)` -> Returns coach ordered by specified column and direction
+
+`getCoachSpecsByCoachId(id)` -> Returns coach specialties by specified coach ID
+
+`getCoachesBySpecsId(id)` -> Returns all coaches with specified specialty by specialty ID
 
 
 
 # DISREGARD ANYTHING BELOW THIS LINE
 
-## 2️⃣ Actions
 
-🚫 This is an example, replace this with the actions that pertain to your backend
-
-`getOrgs()` -> Returns all organizations
-
-`getOrg(orgId)` -> Returns a single organization by ID
-
-`addOrg(org)` -> Returns the created org
-
-`updateOrg(orgId)` -> Update an organization by ID
-
-`deleteOrg(orgId)` -> Delete an organization by ID
-<br>
-<br>
-<br>
-`getUsers(orgId)` -> if no param all users
-
-`getUser(userId)` -> Returns a single user by user ID
-
-`addUser(user object)` --> Creates a new user and returns that user. Also creates 7 availabilities defaulted to hours of operation for their organization.
-
-`updateUser(userId, changes object)` -> Updates a single user by ID.
-
-`deleteUser(userId)` -> deletes everything dependent on the user
 
 ## 3️⃣ Environment Variables
 
@@ -270,7 +269,7 @@ We would love to hear from you about new features which would improve this app a
 
 If you have developed a patch, bug fix, or new feature that would improve this app, please submit a pull request. It is best to communicate your ideas with the developers first before investing a great deal of time into a pull request to ensure that it will mesh smoothly with the project.
 
-Remember that this project is licensed under the MIT license, and by submitting a pull request, you agree that your work will be, too.
+Remember that this project is licensed under the MIT license, and by submitting a pull request, you agree that your work will be, to.
 
 #### Pull Request Guidelines
 
