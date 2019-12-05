@@ -1,8 +1,8 @@
 # API Documentation
 
-#### 1️⃣ Backend STAGING delpoyed at [Heroku](https://sprout-fitness-be-staging.herokuapp.com/)) <br>
+#### 1️⃣ Backend STAGING delpoyed at [Heroku](https://sprout-fitness-be-staging.herokuapp.com/) https://sprout-fitness-be-staging.herokuapp.com/ <br>
 
-#### Backend PRODUCTION delpoyed at [Heroku](https://sprout-fitness-be-prod.herokuapp.com/) <br>
+#### Backend PRODUCTION delpoyed at [Heroku](https://sprout-fitness-be-prod.herokuapp.com/) https://sprout-fitness-be-prod.herokuapp.com/ <br>
 
 ## 1️⃣ Getting started
 
