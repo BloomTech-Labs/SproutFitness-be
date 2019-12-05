@@ -6,6 +6,21 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('coaches').insert([
         {
+          id: '545asd45x5x5x5x',
+          email: 'test885s5s@test.com', 
+          firstname: 'Latrina', 
+          lastname: 'Huang', 
+          timezone: 'central',
+          city: 'Cedar Rapids',
+          country: 'USA',
+          language: 'english',
+          password: 'test',
+          picture_url: 'https://fakepersongenerator.com/Face/female/female20161024805263550.jpg',
+          bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+          is_active: 1
+        },
+        {
+          id: '545232323x5x5x',
           email: 'test@test.com', 
           firstname: 'Latrina', 
           lastname: 'Huang', 
@@ -19,6 +34,7 @@ exports.seed = function(knex) {
           is_active: 1
         },
         {
+          id: 'tyutyu',
           email: 'test2@test.com', 
           firstname: 'Theresia', 
           lastname: 'Dority', 
@@ -32,6 +48,7 @@ exports.seed = function(knex) {
           is_active: 1
         },
         {
+          id: '545abnmbnm5x5x5x',
           email: 'test3@test.com', 
           firstname: 'Robert', 
           lastname: 'Mueller', 
@@ -45,6 +62,7 @@ exports.seed = function(knex) {
           is_active: 1
         },
         {
+          id: '545a1232335x5x5x5x',
           email: 'test4@test.com', 
           firstname: 'Jean', 
           lastname: 'Moore', 
@@ -58,6 +76,7 @@ exports.seed = function(knex) {
           is_active: 1
         },
         {
+          id: '5452323232323x5x5x5x',
           email: 'test5@test.com', 
           firstname: 'James', 
           lastname: 'Conley', 
@@ -71,6 +90,7 @@ exports.seed = function(knex) {
           is_active: 1
         },
         {
+          id: '545asd45x5xasdasdasd5x5x',
           email: 'test6@test.com', 
           firstname: 'Kathleen', 
           lastname: 'Turner', 
@@ -84,6 +104,7 @@ exports.seed = function(knex) {
           is_active: 1
         },
         {
+          id: '545asd45x232323sssdd',
           email: 'test7@test.com', 
           firstname: 'Michael', 
           lastname: 'Martinez', 
@@ -97,6 +118,7 @@ exports.seed = function(knex) {
           is_active: 1
         },
         {
+          id: '545xcvdfuu885x5x5x',
           email: 'test8@test.com', 
           firstname: 'Emily', 
           lastname: 'Schmidt', 
@@ -110,6 +132,7 @@ exports.seed = function(knex) {
           is_active: 1
         },
         {
+          id: '545kjlklaklsjd5x',
           email: 'test9@test.com', 
           firstname: 'Frank', 
           lastname: 'Thompson', 
@@ -122,19 +145,7 @@ exports.seed = function(knex) {
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
           is_active: 1
         },
-        {
-          email: 'test10@test.com', 
-          firstname: 'Charles', 
-          lastname: 'Darst', 
-          timezone: 'central',
-          city: 'Howells',
-          password: 'test',
-          country: 'USA',
-          language: 'english',
-          picture_url: 'https://fakepersongenerator.com/Face/male/male20161083836272461.jpg',
-          bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
-          is_active: 1
-        },
+        
 
         
         

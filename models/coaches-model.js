@@ -33,10 +33,9 @@ function findById(id) {
 
 function add(coach) {
   return db('coaches')
-    .insert(coach, 'id')
-    .then(ids => {
-      const [id] = ids;
-      return findById(id);
+    .insert(coach)
+    .then(count => {
+      return findById(coach.id);
     });
 }
 
