@@ -1,7 +1,7 @@
 exports.up = function (knex) {
   return knex.schema
     .createTable('coach_specialty_details', csd => {
-      csd.increments()
+      csd.string('id', 255).notNullable().unique()
       csd
         .integer('coach_id')
         .notNullable()

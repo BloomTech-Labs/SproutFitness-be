@@ -1,6 +1,6 @@
 exports.up = function(knex) {
   return knex.schema.createTable('coach_certifications', certification => {
-    certification.increments();
+    certification.string('id', 255).notNullable().unique()
     certification
       .integer('coach_id')
       .notNullable()
