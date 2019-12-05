@@ -1,6 +1,8 @@
 # API Documentation
 
-#### 1️⃣ Backend delpoyed at [Heroku](https://sprout-fitness-be-prod.herokuapp.com/) <br>
+#### 1️⃣ Backend STAGING delpoyed at [Heroku](https://sprout-fitness-be-staging.herokuapp.com/)) <br>
+
+#### Backend PRODUCTION delpoyed at [Heroku](https://sprout-fitness-be-prod.herokuapp.com/) <br>
 
 ## 1️⃣ Getting started
 
@@ -10,6 +12,7 @@ To get the server running locally:
 - Clone this repo
 - **npm install** to install all required dependencies
 - **npm start server** to start the local server
+- **npm run server** to start local server using nodemon
 - **npm test** to start server using testing environment
 
 ### Express JS with PostgreSQL
