@@ -25,10 +25,9 @@ function findById(id) {
 
 function add(specialty) {
   return db('specialties')
-    .insert(specialty, 'id')
-    .then(ids => {
-      const [id] = ids;
-      return findById(id);
+    .insert(specialty)
+    .then(count => {
+      return findById(specialty.id);
     });
 }
 

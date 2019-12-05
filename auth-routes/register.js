@@ -11,9 +11,8 @@ router.post('/', (req, res) => {
   const hash = bcrypt.hashSync(coach.password, 10)
   coach.password=hash
   coach.id = uuidv4()
-  console.log('test', coach.id)
 
-  if(!coach.email || !coach.password || !coach.firstname || !coach.lastname || !coach.id ) {
+  if(!coach.email || !coach.password || !coach.firstname || !coach.lastname ) {
     res.status(422).json({message: 'Please enter Email, Password, First Name and Last Name to create an account'})
   } else {
     Coaches.add(coach)

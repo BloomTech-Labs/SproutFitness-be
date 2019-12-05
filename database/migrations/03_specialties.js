@@ -1,6 +1,6 @@
 exports.up = function(knex) {
   return knex.schema.createTable('specialties', specialty => {
-    specialty.increments();
+    specialty.string('id', 255).notNullable().unique()
 
     specialty
       .string('name')

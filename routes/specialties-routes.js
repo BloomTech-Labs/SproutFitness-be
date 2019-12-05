@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Specialties = require('../models/specialties-model');
+const uuidv4 = require('uuid/v4')
 
 
 // Get ALL Specialties - Test route
@@ -37,6 +38,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const specialty = req.body;
+  specialty.id = uuidv4()
   try {
     const newSpecialty = await Specialties.add(specialty);
     res.status(201).json(newSpecialty);
