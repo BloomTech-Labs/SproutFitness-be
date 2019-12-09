@@ -17,6 +17,8 @@ exports.seed = function(knex) {
           password: 'test',
           picture_url: 'https://fakepersongenerator.com/Face/female/female20161024805263550.jpg',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+          resetPasswordToken: 'fake token 1',
+          resetPasswordExpires: Date.now(),
           is_active: 1
         },
         {
@@ -31,6 +33,8 @@ exports.seed = function(knex) {
           password: 'test',
           picture_url: 'https://fakepersongenerator.com/Face/female/female20161024805263550.jpg',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+          resetPasswordToken: 'fake token 2',
+          resetPasswordExpires: Date.now(),
           is_active: 1
         },
         {
@@ -45,6 +49,8 @@ exports.seed = function(knex) {
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/female/female20161024634585480.jpg',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+          resetPasswordToken: 'fake token 3',
+          resetPasswordExpires: Date.now(),
           is_active: 1
         },
         {
@@ -59,6 +65,8 @@ exports.seed = function(knex) {
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/male/male1084474628235.jpg',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+          resetPasswordToken: 'fake token 4',
+          resetPasswordExpires: Date.now(),
           is_active: 1
         },
         {
@@ -73,6 +81,8 @@ exports.seed = function(knex) {
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/female/female20161025483166199.jpg',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+          resetPasswordToken: 'fake token 5',
+          resetPasswordExpires: Date.now(),
           is_active: 1
         },
         {
@@ -87,6 +97,8 @@ exports.seed = function(knex) {
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/male/male20161086693679535.jpg',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+          resetPasswordToken: 'fake token 6',
+          resetPasswordExpires: Date.now(),
           is_active: 1
         },
         {
@@ -101,6 +113,8 @@ exports.seed = function(knex) {
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/female/female20161025181176880.jpg',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+          resetPasswordToken: 'fake token 7',
+          resetPasswordExpires: Date.now(),
           is_active: 1
         },
         {
@@ -115,6 +129,8 @@ exports.seed = function(knex) {
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/male/male1084200952026.jpg',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+          resetPasswordToken: 'fake token 8',
+          resetPasswordExpires: Date.now(),
           is_active: 1
         },
         {
@@ -129,6 +145,8 @@ exports.seed = function(knex) {
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/female/female1023246516449.jpg',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+          resetPasswordToken: 'fake token 9',
+          resetPasswordExpires: Date.now(),
           is_active: 1
         },
         {
@@ -143,6 +161,8 @@ exports.seed = function(knex) {
           language: 'english',
           picture_url: 'https://fakepersongenerator.com/Face/male/male1084281133454.jpg',
           bio: 'Venture stirred by starlight shores of the cosmic ocean network of wormholes circumnavigated quasar. Emerged into consciousness invent the universe concept of the number one star stuff harvesting star light something incredible is waiting to be known two ghostly white figures in coveralls and helmets are soflty dancing. From which we spring the ash of stellar alchemy are creatures of the cosmos a mote of dust suspended in a sunbeam star stuff harvesting star light across the centuries and billions upon billions upon billions upon billions upon billions upon billions upon billions.',
+          resetPasswordToken: 'fake token 10',
+          resetPasswordExpires: Date.now(),
           is_active: 1
         },
         

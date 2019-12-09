@@ -7,6 +7,8 @@ module.exports = {
   add,
   deleteById,
   updateById,
+  updateByEmail,
+  updateByFilter,
 
   // QoL functions
   getCoachInfoById,
@@ -72,6 +74,29 @@ async function updateById(id, coach) {
     };
   }
 }
+
+async function updateByEmail(email, user) {
+  try {
+    const count = await db('coaches').where({ email }).update(user)
+    return count
+  } catch (error) {
+      return {
+          message: error.message
+      }
+  }
+}
+
+async function updateByFilter(resetPasswordToken, user) {
+  try {
+    const count = await db('coaches').where({ resetPasswordToken }).update(user)
+    return count
+  } catch (error) {
+      return {
+          message: error.message
+      }
+  }
+}
+
 
 // Returns an object with the coach record, along with their specialties and certifications.
 async function getCoachInfoById(id) {
