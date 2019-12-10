@@ -23,13 +23,16 @@ Reasons we chose Express JS with PostreSQL
 -    Very common in real world
 -    Relational DB
 
-## 2️⃣ Endpoints
+## 2️⃣ Auth Endpoints
 
 
 | Method | Endpoint               | Description                                  |
 | ------ | -----------------------| ---------------------------------------------------------- |
 | POST    | `/api/login/coaches` |  Returns id, token and welcome message. |
 | POST    | `/api/register/coaches` |  Returns id, token and welcome message.   |
+| POST    | `/api/forgot-password/coaches` |  Returns message: "recovery email sent"  |
+| POST    | `/api/reset-password/coaches` |  Returns message: "message": "password reset link a-ok"   |
+| POST    | `/api/update-password-via-email/coaches` |  Returns message: "message": "message": "password updated"  |
 
 
 ### Helper Routes
@@ -205,27 +208,32 @@ Each specialty a Coach has is a record in this table.
 
 ## 2️⃣ Actions (Models)
 
-`findAll()` -> Returns all data from the specified table
+`findAll()` -> Returns all data from the specified table.
 
-`findBy(filter)` -> Returns a single item by specified filter
+`findBy(filter)` -> Returns a single item by specified filter.
 
-`findById(id)` -> Returns a single item by ID
+`findById(id)` -> Returns a single item by ID.
 
-`add(item)` -> Returns the created object data
+`add(item)` -> Returns the created object data.
 
 `updateById(id)` -> Update an item by ID.
 
-`deleteById(id)` -> Delete an item by ID
+`deleteById(id)` -> Delete an item by ID.
+
+`updateByEmail` -> Update an item by email.
+
+`updateByFilter`-> Update an item by specified filter.
+
 
 <br>
 
 `getCoachInfoById(id)` -> Returns an object with the coach record, along with their specialties and certifications.
 
-`getCoachesOrderedBy(column, direction)` -> Returns coach ordered by specified column and direction
+`getCoachesOrderedBy(column, direction)` -> Returns coach ordered by specified column and direction.
 
-`getCoachSpecsByCoachId(id)` -> Returns coach specialties by specified coach ID
+`getCoachSpecsByCoachId(id)` -> Returns coach specialties by specified coach ID.
 
-`getCoachesBySpecsId(id)` -> Returns all coaches with specified specialty by specialty ID
+`getCoachesBySpecsId(id)` -> Returns all coaches with specified specialty by specialty ID.
 
 
 
