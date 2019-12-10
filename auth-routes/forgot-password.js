@@ -2,7 +2,6 @@ const router = require('express').Router()
 const nodemailer = require('nodemailer');
 const crypto = require("crypto")
 const Coaches = require('../models/coaches-model')
-require('dotenv').config();
 
 
 // This endpoint is being hit when you click "Send password reset email" button and sends you a link to reset password.
