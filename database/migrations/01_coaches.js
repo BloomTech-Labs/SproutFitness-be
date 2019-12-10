@@ -13,6 +13,8 @@ exports.up = function(knex) {
       coaches.string('city')
       coaches.string('country')
       coaches.string('bio', 10000)
+      coaches.string('resetPasswordToken')
+      coaches.datetime('resetPasswordExpires')
   })
 };
 

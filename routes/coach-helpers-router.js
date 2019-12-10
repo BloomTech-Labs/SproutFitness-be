@@ -6,7 +6,7 @@ router.get('/coach/data/:id', async (req, res) => {
     try {
         const coachInfo = await Coaches.getCoachInfoById(id)
         // console.log(coachInfo.coach)
-        if(coachInfo.coach == undefined || null) {
+        if(coachInfo.coach == undefined || coachInfo.coach == null) {
             res.status(404).json({
                 message: `Could not find Coach data with ID: ${id}`
             }) 
