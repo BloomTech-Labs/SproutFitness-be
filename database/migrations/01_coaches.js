@@ -2,6 +2,7 @@ exports.up = function(knex) {
   return knex.schema
   .createTable('coaches', coaches => {
       coaches.string('id', 255).notNullable().unique()
+      coaches.string('family_id').references('id').inTable('families')
       coaches.string('email', 128).notNullable().unique()
       coaches.string('password', 128).notNullable()
       coaches.string('firstname', 128).notNullable()
