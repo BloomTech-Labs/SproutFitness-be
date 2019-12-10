@@ -17,10 +17,10 @@ module.exports = {
       filename: './database/sprout.db3',
     },
     migrations: {
-      directory: './database/migrations',
+      directory: './database/migrations/dev',
     },
     seeds: {
-      directory: './database/seeds',
+      directory: './database/seeds/dev',
     },
     pool: {
       afterCreate: (conn, done) => {
@@ -51,10 +51,10 @@ module.exports = {
     },
     useNullAsDefault: true,
     migrations: {
-      directory: './database/migrations',
+      directory: './database/migrations/dev',
     },
     seeds: {
-      directory: './database/seeds',
+      directory: './database/seeds/dev',
     },
   },
 };
