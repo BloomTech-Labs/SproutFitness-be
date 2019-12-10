@@ -14,7 +14,7 @@ exports.up = function(knex) {
       coaches.string('country')
       coaches.string('bio', 10000)
       coaches.string('resetPasswordToken')
-      coaches.datetime('resetPasswordExpires')
+      coaches.datetime('resetPasswordExpires').defaultTo(knex.fn.now());
   })
 };
 
