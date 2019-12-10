@@ -3,14 +3,14 @@ exports.up = function (knex) {
     .createTable('coach_specialty_details', csd => {
       csd.string('id', 255).notNullable().unique()
       csd
-        .integer('coach_id')
+        .string('coach_id')
         .notNullable()
         .references('id')
         .inTable('coaches')
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
       csd
-        .integer('specialty_id')
+        .string('specialty_id')
         .notNullable()
         .references('id')
         .inTable('specialties')
