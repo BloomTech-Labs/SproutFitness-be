@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
   });
 
   const mailOptions = {
-    from: 'tse@gmail.com',
+    from: 'Sprout fitness',
     to: `${user.email}`,
     subject: 'Link To Reset Password',
     text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
