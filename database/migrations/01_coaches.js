@@ -18,6 +18,7 @@ exports.up = async (knex) => {
       coaches.string('city')
       coaches.string('country')
       coaches.string('bio', 10000)
+      coaches.timestamp('created_at').defaultTo(knex.fn.now())
       coaches.string('resetPasswordToken')
       coaches.bigInteger('resetPasswordExpires', 10000)
     })

@@ -9,6 +9,7 @@ exports.up = async (knex) => {
           .defaultTo(knex.raw('uuid_generate_v4()'));
         families.string('name', 128).notNullable()
         families.integer('is_active', 1).defaultTo(1).notNullable()
+        families.timestamp('created_at').defaultTo(knex.fn.now())
     })
   };
   

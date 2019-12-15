@@ -6,6 +6,7 @@ exports.up = function(knex) {
       .unique();
 
     specialty.string('icon_url');
+    specialty.timestamp('created_at').defaultTo(knex.fn.now())
   });
 };
 
