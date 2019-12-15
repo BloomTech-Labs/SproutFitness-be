@@ -29,7 +29,6 @@ function findById(id) {
   return db('coaches')
     .select( //omit the password
       'id',
-      'family_id',
       'firstname',
       'lastname',
       'email',

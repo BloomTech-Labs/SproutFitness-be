@@ -7,7 +7,6 @@ exports.seed = function(knex) {
       return knex('coaches').insert([
         {
           id: 'adf4b829-9d72-406f-8db2-de69e9655c60',
-          family_id: '6dd44455-fe43-4c23-819b-69506aaf3d6b',
           email: 'test@test.com', 
           firstname: 'Melissa', 
           lastname: 'Smith', 

@@ -7,7 +7,6 @@ exports.up = async (knex) => {
         .notNullable()
         .primary()
         .defaultTo(knex.raw('uuid_generate_v4()'));
-      coaches.uuid('family_id').references('id').inTable('families')
       coaches.string('email', 128).notNullable().unique()
       coaches.string('password', 128).notNullable()
       coaches.string('firstname', 128).notNullable()
