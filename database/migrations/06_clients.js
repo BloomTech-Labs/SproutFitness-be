@@ -1,8 +1,8 @@
 exports.up = function(knex) {
     return knex.schema
     .createTable('clients', clients => {
-        clients.string('id', 255).notNullable().unique()
-        clients.string('family_id').references('id').inTable('families')
+        clients.uuid('id').unique().notNullable().primary().defaultTo(knex.raw('uuid_generate_v4()'))
+        clients.uuid('family_id').references('id').inTable('families')
         clients.string('email', 128).notNullable().unique()
         clients.string('password', 128).notNullable()
         clients.string('firstname', 128).notNullable()

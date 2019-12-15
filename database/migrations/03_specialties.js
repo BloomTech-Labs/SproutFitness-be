@@ -1,7 +1,6 @@
 exports.up = function(knex) {
   return knex.schema.createTable('specialties', specialty => {
-    specialty.string('id', 255).notNullable().unique()
-
+    specialty.uuid('id').unique().notNullable().primary().defaultTo(knex.raw('uuid_generate_v4()'))
     specialty.string('name')
       .notNullable()
       .unique();

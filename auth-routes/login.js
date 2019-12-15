@@ -14,7 +14,6 @@ router.post('/', (req, res) => {
     .then(coach => {
       if(coach && bcrypt.compareSync(password, coach.password)) {
         const token = generateToken(coach)
-
         res.status(200).json({
           message: `Welcome ${coach.firstname}!`,
           id: coach.id, 

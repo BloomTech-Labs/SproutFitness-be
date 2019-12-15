@@ -27,18 +27,35 @@ function findBy(filter) {
 
 function findById(id) {
   return db('coaches')
-    .where({
-      id
-    })
+    .select( //omit the password
+      'id',
+      'family_id',
+      'firstname',
+      'lastname',
+      'email',
+      'bio',
+      'language',
+      'timezone',
+      'picture_url',
+      'city',
+      'country',
+      'is_active'
+    )
+    .where({ id })
     .first();
 }
 
-function add(coach) {
-  return db('coaches')
-    .insert(coach)
-    .then(count => {
-      return findById(coach.id);
-    });
+async function add(coach) {
+  try {
+    const responseIds = await db('coaches').insert(coach).returning('id')
+    const newCoachId = responseIds[0]
+
+    const newCoachData =  await findById(newCoachId)
+    return newCoachData
+  } catch(error) {
+    return error
+  }
+  
 }
 
 async function deleteById(id) {
@@ -60,12 +77,12 @@ async function deleteById(id) {
 
 async function updateById(id, coach) {
   try {
-    const updatedCoachCount = await db('coaches')
-      .where({
-        id
-      })
-      .update(coach);
-    return updatedCoachCount;
+    const updatedCoachId = await db('coaches')
+      .where({ id })
+      .update(coach)
+      .returning('id')
+    const updatedCoach = await findById(updatedCoachId[0])
+    return updatedCoach;
   } catch (error) {
     return {
       code: error.code,
@@ -81,7 +98,7 @@ async function updateByEmail(email, user) {
     return count
   } catch (error) {
       return {
-          message: error.message
+        message: error.message
       }
   }
 }

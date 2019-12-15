@@ -5,7 +5,7 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('families').insert([
-        {id: '85s54sd-5s4d54s-545sd4-xccc', name: 'First Family'},
+        {id: '6dd44455-fe43-4c23-819b-69506aaf3d6b', name: 'First Family'},
       ]);
     });
 };

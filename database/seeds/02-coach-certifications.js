@@ -5,58 +5,25 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex('coach_certifications').insert([
         {
-          id: '39393-alkjaj-dsfx-1',
+          id: 'b75e4aed-b928-430b-a71e-0c46138b9760',
           name: 'NSHC – National Society of Health Coaches',
-          coach_id: '545asd45x5x5x5x'
+          coach_id: 'adf4b829-9d72-406f-8db2-de69e9655c60'
         },
 
         {
-          id: '39393-alkjaj-dsfx-2',
+          id: 'f2ee60db-f87f-4869-b362-503e67f5831b',
           name: 'American Council on Exercise (ACE)',
-          coach_id: '545232323x5x5x'
-        },
-
-        {
-          id: '39393-alkjaj-dsfx-3',
-          name: 'Dr. Sears Wellness Institute',
-          coach_id: 'tyutyu'
-        },
-
-        {
-          id: '39393-alkjaj-dsfx-4',
-          name: 'Wellcoaches School of Coaching',
-          coach_id: '545abnmbnm5x5x5x'
-        },
-
-        {
-          id: '39393-alkjaj-dsfx-5',
-          name: 'Duke Integrative Medicine',
-          coach_id: '545a1232335x5x5x5x'
+          coach_id: 'adf4b829-9d72-406f-8db2-de69e9655c60'
         },
         {
-          id: '39393-alkjaj-dsfx-6',
-          name: 'National Wellness Institute',
-          coach_id: '5452323232323x5x5x5x'
-        },
-        {
-          id: '39393-alkjaj-dsfx-7',
-          name: 'Wellness Council of America',
-          coach_id: '545asd45x5xasdasdasd5x5x'
-        },
-        {
-          id: '39393-alkjaj-dsfx-8',
-          name: 'American College of Healthcare Sciences',
-          coach_id: '545asd45x232323sssdd'
-        },
-        {
-          id: '39393-alkjaj-dsfx-9',
+          id: '57ed9e0b-884e-4bf4-90b5-ba4afe5fd994',
           name: 'International Association for Worksite Health Promotion',
-          coach_id: '545xcvdfuu885x5x5x'
+          coach_id: '0dd171a1-37f7-4a71-9bc3-06c30fbb623b'
         },
         {
-          id: '39393-alkjaj-dsfx-10',
+          id: 'a8ff37bb-d034-4d75-ab81-585d77efc481',
           name: 'American Fitness Professionals & Associates',
-          coach_id: '545kjlklaklsjd5x'
+          coach_id: '0dd171a1-37f7-4a71-9bc3-06c30fbb623b'
         },
 
       ]);
