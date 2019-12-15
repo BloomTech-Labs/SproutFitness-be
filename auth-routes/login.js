@@ -6,7 +6,6 @@ const Coaches = require('../models/coaches-model')
 
 router.post('/', (req, res) => {
   let {email, password} = req.body
-
   if(!req.body.email || !req.body.password) {
     res.status(422).json({message: 'Please provide a email and a password to log in'})
   } else {
@@ -14,9 +13,14 @@ router.post('/', (req, res) => {
     .then(coach => {
       if(coach && bcrypt.compareSync(password, coach.password)) {
         const token = generateToken(coach)
+        // Remove password from the coach object to be passed back in response
+        const coachNoPasswordCopy = coach
+        delete coachNoPasswordCopy.password
+
         res.status(200).json({
           message: `Welcome ${coach.firstname}!`,
-          id: coach.id, 
+          id: coach.id,
+          coach: coachNoPasswordCopy,
           token: token
         })
 
