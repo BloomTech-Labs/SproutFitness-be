@@ -1,9 +1,11 @@
+
+// LOCAL POSTGRES CONFIG
 const localPg = {
   host: 'localhost',
-  port: 5482,
+  port: 5482, // You may need/want to change this
   database: 'sprout-dev',
-  user: 'postgres',
-  password: 'test'
+  user: 'postgres', // User and pass may be different for you
+  password: 'test'  
 }
 
 const prodDbConnection = process.env.DATABASE_URL
