@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const CoachCerts = require('../models/coach-certifications-model');
+const uuidv4 = require('uuid/v4')
 
 // Get ALL Certs - Test route
 router.get('/', (req, res) => {
@@ -35,6 +36,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   const cert = req.body;
+  cert.id = uuidv4()
   try {
     const newCert = await CoachCerts.add(cert);
     res.status(201).json(newCert);

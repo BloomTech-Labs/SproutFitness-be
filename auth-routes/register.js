@@ -2,6 +2,8 @@ const router = require('express').Router();
 const bcrypt = require('bcryptjs');
 const generateToken = require('../config/token')
 const Coaches = require('../models/coaches-model')
+const uuidv4 = require('uuid/v4')
+
 
 
 router.post('/', (req, res) => {
@@ -9,8 +11,9 @@ router.post('/', (req, res) => {
 
   const hash = bcrypt.hashSync(coach.password, 10)
   coach.password=hash
+  coach.id = uuidv4()
 
-  if(!coach.email || !coach.password || !coach.firstname || !coach.lastname) {
+  if(!coach.email || !coach.password || !coach.firstname || !coach.lastname ) {
     res.status(422).json({message: 'Please enter Email, Password, First Name and Last Name to create an account'})
   } else {
     Coaches.add(coach)

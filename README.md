@@ -224,7 +224,6 @@ Each specialty a Coach has is a record in this table.
 
 `updateByFilter`-> Update an item by specified filter.
 
-
 <br>
 
 `getCoachInfoById(id)` -> Returns an object with the coach record, along with their specialties and certifications.

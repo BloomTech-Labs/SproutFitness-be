@@ -1,33 +1,27 @@
+
+// LOCAL POSTGRES CONFIG
 const localPg = {
   host: 'localhost',
-  database: 'test',
-  user: 'test',
-  password: 'test'
+  port: 5482, // You may need/want to change this
+  database: 'sprout-dev',
+  user: 'postgres', // User and pass may be different for you
+  password: 'test'  
 }
 
-const prodDbConnection = process.env.DATABASE_URL || localPg
+const prodDbConnection = process.env.DATABASE_URL
 
 module.exports = {
 
-  // SQLITE
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     useNullAsDefault: true,
-    connection: {
-      filename: './database/sprout.db3',
-    },
+    connection: localPg,
     migrations: {
       directory: './database/migrations',
     },
     seeds: {
       directory: './database/seeds',
     },
-    pool: {
-      afterCreate: (conn, done) => {
-        // runs after a connection is made to the sqlite engine
-        conn.run('PRAGMA foreign_keys = ON', done); // turn on FK enforcement
-      }
-    }
   },
 
   // POSTGRE SQL
@@ -44,17 +38,17 @@ module.exports = {
   },
 
 
-  testing: {
-    client: 'sqlite3',
-    connection: {
-      filename: './database/tester.db3',
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: './database/migrations',
-    },
-    seeds: {
-      directory: './database/seeds',
-    },
-  },
+  // testing: {
+  //   client: 'sqlite3',
+  //   connection: {
+  //     filename: './database/tester.db3',
+  //   },
+  //   useNullAsDefault: true,
+  //   migrations: {
+  //     directory: './database/migrations/dev',
+  //   },
+  //   seeds: {
+  //     directory: './database/seeds/dev',
+  //   },
+  // },
 };

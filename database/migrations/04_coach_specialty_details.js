@@ -1,16 +1,16 @@
 exports.up = function (knex) {
   return knex.schema
     .createTable('coach_specialty_details', csd => {
-      csd.increments()
+      csd.uuid('id').unique().notNullable().primary().defaultTo(knex.raw('uuid_generate_v4()'))
       csd
-        .integer('coach_id')
+        .uuid('coach_id')
         .notNullable()
         .references('id')
         .inTable('coaches')
         .onDelete('CASCADE')
         .onUpdate('CASCADE')
       csd
-        .integer('specialty_id')
+        .uuid('specialty_id')
         .notNullable()
         .references('id')
         .inTable('specialties')
