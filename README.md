@@ -224,7 +224,6 @@ Each specialty a Coach has is a record in this table.
 
 `updateByFilter`-> Update an item by specified filter.
 
-
 <br>
 
 `getCoachInfoById(id)` -> Returns an object with the coach record, along with their specialties and certifications.
@@ -237,10 +236,6 @@ Each specialty a Coach has is a record in this table.
 
 
 
-# DISREGARD ANYTHING BELOW THIS LINE
-
-
-
 ## 3️⃣ Environment Variables
 
 In order for the app to function correctly, the user must set up their own environment variables.
@@ -249,12 +244,15 @@ create a .env file that includes the following:
 
 🚫 These are just examples, replace them with the specifics for your app
     
-    *  STAGING_DB - optional development db for using functionality not available in SQLite
+    *  DATABASE_URL - url point ro PostgreSql database in production
     *  NODE_ENV - set to "development" until ready for "production"
     *  JWT_SECRET - you can generate this by using a python shell and running import random''.join([random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#\$%^&amp;*(-*=+)') for i in range(50)])
-    *  SENDGRID_API_KEY - this is generated in your Sendgrid account
-    *  stripe_secret - this is generated in the Stripe dashboard
+    *  EMAIL_ADDRESS - password of the email to send links to users for password resetting
+    *  EMAIL_PASSWORD - password of the email for password resetting
+   
     
+# DISREGARD ANYTHING BELOW THIS LINE
+
 ## Contributing
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
