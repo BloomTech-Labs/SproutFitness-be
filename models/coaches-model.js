@@ -122,7 +122,7 @@ async function getCoachInfoById(id) {
     const specialties = await
     db('coach_specialty_details as csd')
       .join('specialties as s', 'csd.specialty_id', '=', 's.id')
-      .select('*')
+      .select('csd.id as id', 'csd.specialty_id as specialty_id', 'csd.coach_id as coach_id', 's.name as name', 's.icon_url as icon_url')
       .where('csd.coach_id', id)
 
     const certifications = await db('coach_certifications').where('coach_id', id)
@@ -167,7 +167,7 @@ async function getCoachesOrderedBy(column, direction) {
 function getCoachSpecsByCoachId(id) {
   return db('coach_specialty_details as csd')
     .join('specialties as s', 'csd.specialty_id',  's.id')
-    .select('*')
+    .select('csd.id as id', 'csd.specialty_id as specialty_id', 'csd.coach_id as coach_id', 's.name as name', 's.icon_url as icon_url')
     .where('csd.coach_id', id)
 }
 
