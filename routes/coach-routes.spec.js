@@ -80,7 +80,7 @@ describe('Get requests for Coaches routers /', () => {
       })
     })
 
- describe('/api/register route', () => {
+ describe('POST /api/coaches', () => {
     it('should return status code 201', async () => {
       let response = await request(server).post('/api/coaches')
         .send({firstname: 'user', password: 'password'})
@@ -91,10 +91,23 @@ describe('Get requests for Coaches routers /', () => {
       { 
           firstname: "",
       }
-      let response = await request(server).post('/api/coaches')
+      let response = await request(server).post('/api/coaches/')
         .send(user)
        expect(response.status).toBe(400)
     })
 
  })
+
+
+  describe('Delete /api/coaches/:id', () => {
+    it('should return status code 200', () => {
+      let response = request(server).delete('/api/coaches/adf4b829-9d72-406f-8db2-de69e9655c60')
+      .then(res => {
+       expect(res.status).toBe(200)
+    })
+  })
+
+ })
+
  
+
