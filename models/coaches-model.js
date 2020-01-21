@@ -22,6 +22,7 @@ function findAll() {
 }
 
 function findBy(filter) {
+  
   return db('coaches').where(filter);
 }
 

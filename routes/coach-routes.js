@@ -3,7 +3,7 @@ const Coaches = require('../models/coaches-model')
 const protect = require('../middleware/protected.js')
 
 // Get ALL Coaches - Test route
-router.get('/', protect, (req, res) => {
+router.get('/', (req, res) => {
     Coaches.findAll()
         .then(coaches => {
             res.status(200).json(coaches)
@@ -36,9 +36,16 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
     const coach = req.body
+    
     try {
+        if (coach.firstname.length <= 0) {
+            res.status(400).json({
+                message: "Field is empty. Please enter info"
+            })
+        } 
+    
         const newCoach = await Coaches.add(coach)
         res.status(201).json(newCoach)
     } catch(error) {
@@ -46,7 +53,8 @@ router.post('/', async (req, res) => {
             message: `Could not add Coach to the server`,
             error: error
         })
-    }
+    
+}
 })
 
 router.put('/:id', async (req, res) => {
