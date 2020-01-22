@@ -2,7 +2,7 @@ const request = require('supertest');
 const server = require('../api/server');
 const db = require('../database/dbConfig');
 
-describe('Coaches router', () => {
+xdescribe('Coaches router', () => {
   describe('GET /', () => {
     it('should return an object', () => {
       return request(server)
