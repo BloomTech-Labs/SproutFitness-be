@@ -2,10 +2,10 @@
 // LOCAL POSTGRES CONFIG
 const localPg = {
   host: 'localhost',
-  port: 5482, // You may need/want to change this
-  database: 'sprout-dev',
+  port: 5432, // You may need/want to change this
+  database: 'postgres',
   user: 'postgres', // User and pass may be different for you
-  password: 'test'  
+  password: 'ibonator'  
 }
 
 const prodDbConnection = process.env.DATABASE_URL
@@ -38,17 +38,17 @@ module.exports = {
   },
 
 
-  // testing: {
-  //   client: 'sqlite3',
-  //   connection: {
-  //     filename: './database/tester.db3',
-  //   },
-  //   useNullAsDefault: true,
-  //   migrations: {
-  //     directory: './database/migrations/dev',
-  //   },
-  //   seeds: {
-  //     directory: './database/seeds/dev',
-  //   },
-  // },
+  testing: {
+    client: 'pg',
+    connection: {
+      filename: './database/tester.db3',
+    },
+    useNullAsDefault: true,
+    migrations: {
+      directory: './database/migrations/dev',
+    },
+    seeds: {
+      directory: './database/seeds/dev',
+    },
+  },
 };
