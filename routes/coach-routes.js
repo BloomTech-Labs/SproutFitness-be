@@ -26,6 +26,12 @@ router.get('/:id', async (req, res) => {
                 message: `Could not find Coach with ID: ${id}`
             })
         }
+        if (id.length > 36) {
+            res.status(404).json({
+                message: `No a`
+            })
+
+        }
         res.status(200).json(coach)
 
     } catch(error) {

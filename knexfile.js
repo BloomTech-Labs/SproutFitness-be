@@ -37,18 +37,16 @@ module.exports = {
     },
   },
 
-
   testing: {
-    client: 'sqlite3',
-    connection: {
-      filename: './database/tester.db3',
-    },
+    client: 'pg',
+    connection: localPg,
     useNullAsDefault: true,
     migrations: {
-      directory: './database/migrations/dev',
+      directory: './database/migrations',
     },
     seeds: {
-      directory: './database/seeds/dev',
+      directory: './database/seeds',
     },
+  
   },
 };
