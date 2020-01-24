@@ -1,4 +1,4 @@
-{
+ {
   "name": "square1_be",
   "version": "1.0.0",
   "description": "Backend repo for Sprout Fitness",
@@ -6,7 +6,7 @@
   "scripts": {
     "server": "nodemon",
     "start": "node index.js",
-    "test": "cross-env DB_ENV=testing jest --watch"
+    "test": "cross-env DB_ENV=testing jest --verbose --watch"
   },
   "repository": {
     "type": "git",

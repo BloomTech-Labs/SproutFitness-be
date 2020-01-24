@@ -51,4 +51,15 @@ module.exports = {
       directory: './database/seeds/dev',
     },
   },
+  testing: {
+    client: 'pg',
+    connection: localPg,
+    useNullAsDefault: true,
+    migrations: {
+      directory: './database/migrations',
+    },
+    seeds: {
+      directory: './database/seeds',
+    },
+  },
 };
