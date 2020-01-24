@@ -1,14 +1,12 @@
 const request = require('supertest');
 const server = require('../api/server');
-const knex = require('../database/dbConfig');
+const db = require('../database/dbConfig');
 
-xdescribe('testing suite for routes', () => {
+describe('testing suite for routes', () => {
 
-	beforeEach(() => {
-		return knex.migrate.rollback()
-			.then(() => knex.migrate.latest())
-			.then(() => knex.seed.run());
-	});	
+	beforeEach( async() => {
+		await db.seed.run();
+	}) 
 
 	describe('Coaches certifications tests /api/coach_certifications', () => {
 		describe('GET /', () => {

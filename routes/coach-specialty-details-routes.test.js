@@ -3,26 +3,14 @@ const server = require('../api/server');
 const db = require('../database/dbConfig');
 
 
-describe('Coaches certifications /api/coach_specialty_details', () => {
+xdescribe('Coaches certifications /api/coach_specialty_details', () => {
 
 	beforeEach( async() => {
 		await db('coach_specialty_details').truncate();
-		await db.seed.run()
 	})  
 
 	describe('GET /', () => {
-		it('should return object with seed data', () => {
-
-			const cert = {
-				"coach_id": "0dd171a1-37f7-4a71-9bc3-06c30fbb623b",
-				"name": "test cert"
-			}
-
-			db('coach_specialty_details')
-			.insert(cert, "id")
-			.then(res => {
-
-			})
+		it('should return object with seed data', async () => {
 
 			return request(server)
 			.get('/api/coach_specialty_details')
@@ -34,7 +22,7 @@ describe('Coaches certifications /api/coach_specialty_details', () => {
 		});
 	});
 
-	xdescribe('GET /:id', () => {
+	describe('GET /:id', () => {
 		it('should return object with seed data', () => {
 			return request(server)
 			.get('/api/coach_specialty_details/62ae9ed9-1a55-4aad-886b-780077d6c2cc')
@@ -46,7 +34,7 @@ describe('Coaches certifications /api/coach_specialty_details', () => {
 		});
 	});
 
-	xdescribe('POST /', () => {
+	describe('POST /', () => {
 		it('should return the new entry', () => {
 			const newSpecDetails = {
 				coach_id: 'adf4b829-9d72-406f-8db2-de69e9655c60',
@@ -65,7 +53,7 @@ describe('Coaches certifications /api/coach_specialty_details', () => {
 		});
 	});
 
-	xdescribe('PUT /:id', () => {
+	describe('PUT /:id', () => {
 		it('should return 1 for true on success', () => {
 			const updatedSpecDetails = {
 				specialty_id: '08ea05a4-2ea0-4e15-80a0-236b86e2fb99'
@@ -82,7 +70,7 @@ describe('Coaches certifications /api/coach_specialty_details', () => {
 		});
 	});
 
-	xdescribe('DELETE /:id', () => {
+	describe('DELETE /:id', () => {
 		it('should return 1 for true on success', () => {
 			return request(server)
 			.delete("/api/coach_specialty_details/62ae9ed9-1a55-4aad-886b-780077d6c2cc")
@@ -93,5 +81,4 @@ describe('Coaches certifications /api/coach_specialty_details', () => {
 			})
 		})
 	})
-
 });
