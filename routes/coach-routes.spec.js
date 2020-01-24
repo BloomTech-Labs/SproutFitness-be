@@ -38,14 +38,14 @@ describe('Coaches router', () => {
   describe('GET requests for Coaches routers /:id', () => {
     describe('GET /api/coaches/adf4b829-9d72-406f-8db2-de69e9655c60', () => {
       it('returns 200 ok', () => {
-         request(router)
+         request(server)
         .get('/')
          .then(res => {
           expect(res.status).toBe(200)
          })
       })
       it('should return 401 if id does not exist', () => {
-        request(router)
+        request(server)
         .get('/api/coaches/1')
           .then(res => {
            expect(res.status).toBe(404)
@@ -53,7 +53,7 @@ describe('Coaches router', () => {
      })
      it('should return 404 if id does not exist', () => {
       const id = 'adf4b829-9d72-406f-8db2-de69e9655c6052'
-      request(router)
+      request(server)
       .get(`/api/coaches/${id}`)
         .then(res => {
          expect(res.status).toBe(404)
@@ -66,9 +66,17 @@ describe('Coaches router', () => {
   
 
  describe('POST /api/coaches', () => {
+  it('should return status code 201', () => {
+    return request(server)
+    .post('/api/coaches')
+    .send({firstname: "Fits"})
+    .then(res => {
+        expect(res.status).toBe(201);
+    });
+});
 
 it('should return status code 400 if fields are empty', () => {
-      request(server)
+      return request(server)
       .post('/api/coaches')
       .send({firstname: "Jamison", lastname: "Blackwell", email: "blackj@gmail.com", password: "Aroirnreeio32"})
       .then(res => {
