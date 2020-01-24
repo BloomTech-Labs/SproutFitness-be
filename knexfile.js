@@ -5,7 +5,15 @@ const localPg = {
   port: 5432, // You may need/want to change this
   database: 'postgres',
   user: 'postgres', // User and pass may be different for you
-  password: 'ibonator'  
+  password: 'lambda'  
+}
+
+const testPg = {
+  host: 'localhost',
+  port: 5432, // You may need/want to change this
+  database: 'tester',
+  user: 'postgres', // User and pass may be different for you
+  password: 'lambda'  
 }
 
 const prodDbConnection = process.env.DATABASE_URL
@@ -37,23 +45,9 @@ module.exports = {
     },
   },
 
-
   testing: {
     client: 'pg',
-    connection: {
-      filename: './database/tester.db3',
-    },
-    useNullAsDefault: true,
-    migrations: {
-      directory: './database/migrations/dev',
-    },
-    seeds: {
-      directory: './database/seeds/dev',
-    },
-  },
-  testing: {
-    client: 'pg',
-    connection: localPg,
+    connection: testPg,
     useNullAsDefault: true,
     migrations: {
       directory: './database/migrations',
