@@ -90,7 +90,7 @@ it('should return status code 400 if fields are empty', () => {
   describe('PUT /api/coaches/adf4b829-9d72-406f-8db2-de69e9655c60', () => {
     
     it('should return 202 when new user property from a user is changed', () => {
-       request(server)
+       return request(server)
       .put('/api/coaches/0dd171a1-37f7-4a71-9bc3-06c30fbb623b')
       .send({ firstname: "Jamison" })
         .then(res => {
@@ -98,7 +98,7 @@ it('should return status code 400 if fields are empty', () => {
         })
       })
       it("should return a JSON", function() {
-        request(server)
+        return request(server)
           .put('/api/coaches/adf4b829-9d72-406f-8db2-de69e9655c60')
           .then(res => {
             expect(res.type).toMatch(/json/i);
