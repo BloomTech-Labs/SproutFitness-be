@@ -9,10 +9,6 @@ router.get('/', (req, res) => {
             res.status(200).json(coaches)
         })
         .catch(error => {
-            res.status(500).json({
-                message: 'Sorry could not get coaches from the server',
-                error
-            })
         })
 
 })
@@ -35,10 +31,6 @@ router.get('/:id', async (req, res) => {
         res.status(200).json(coach)
 
     } catch(error) {
-        res.status(500).json({
-            message: "There was an error with the server.",
-            error
-        })
     }
 })
 
@@ -55,10 +47,6 @@ router.post('/', async (req, res, next) => {
         const newCoach = await Coaches.add(coach)
         res.status(201).json(newCoach)
     } catch(error) {
-        res.status(500).json({
-            message: `Could not add Coach to the server`,
-            error: error
-        })
     
 }
 })
@@ -75,10 +63,6 @@ router.put('/:id', async (req, res) => {
         }
         res.status(200).json(updatedCoach)
     } catch(error) {
-        res.status(500).json({
-            message: `Could not update Coach with ID ${id}`,
-            error: error
-        })
     }
     
 })
@@ -94,10 +78,6 @@ router.delete('/:id', async (req, res) => {
         } 
         res.status(200).json(delCoachCount)
     } catch(error) {
-        res.status(500).json({
-            message: `Could not delete Coach with ID: ${id}`,
-            error: error
-        })
     }
 })
 
