@@ -66,14 +66,6 @@ describe('Coaches router', () => {
   
 
  describe('POST /api/coaches', () => {
-//   it('should return status code 201', () => {
-//     return request(server)
-//     .post('/api/coaches')
-//     .send({firstname: "Fits"})
-//     .then(res => {
-//         expect(res.status).toBe(201);
-//     });
-// });
 
 it('should return status code 400 if fields are empty', () => {
       request(server)
