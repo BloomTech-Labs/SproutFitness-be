@@ -2,8 +2,7 @@ const request = require('supertest');
 const server = require('../api/server');
 const db = require('../database/dbConfig');
 
-
-   describe('Coaches specialties /api/specialties', () => {
+ xdescribe('Coaches specialties /api/specialties', () => {
     beforeEach( async() => {
 		await db.seed.run()
 	})  
@@ -116,7 +115,6 @@ describe('Delete /', () => {
         return request(server)
         .delete('/api/specialties/2e91c857-acc4-4126-a2f2-8f64fb43a82e')
         .then(res => {
-            console.log(res.status)
             expect(res.status).toBe(200);
         });
     }); 
