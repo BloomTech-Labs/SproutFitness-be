@@ -6,7 +6,7 @@ const Coaches = require('../models/coaches-model')
 // If result is true, render reset password form to the screen, else show error message
   router.get('/', (req, res) => {
     const resetPasswordToken = req.query.resetPasswordToken
-     Coaches.findBy({resetPasswordToken})
+     Coaches.findBy({resetPasswordToken}).first()
      .then(user => {
        //console.log('USER:', user)
 

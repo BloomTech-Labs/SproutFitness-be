@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
     await Coaches.updateByEmail(email, newUser)
 
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'outlook',
     auth: {
       user: `${process.env.EMAIL_ADDRESS}`,
       pass: `${process.env.EMAIL_PASSWORD}`,
@@ -44,7 +44,7 @@ router.post('/', async (req, res) => {
     subject: 'Link To Reset Password',
     text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
       'Please click on the following link, or paste this into your browser to complete the process within one hour of receiving it:\n\n' +
-      `http://localhost:3000/reset-password/${token}\n\n` +
+      `https://sprout-development.netlify.com/reset-password/${token}\n\n` +
       'If you did not request this, please ignore this email and your password will remain unchanged.\n',
   };
 
@@ -53,6 +53,7 @@ router.post('/', async (req, res) => {
   transporter.sendMail(mailOptions, (err, response) => {
     if (err) {
       console.error('there was an error: ', err);
+      res.status(403).json('error logging in into email service, please check email provider security settings or credentials')
     } else {
       console.log('here is the res: ', response);
       res.status(200).json('recovery email sent');
@@ -65,6 +66,5 @@ router.post('/', async (req, res) => {
     })
   }
 })
-
 
 module.exports = router
