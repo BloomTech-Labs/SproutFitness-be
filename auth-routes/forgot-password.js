@@ -53,9 +53,10 @@ router.post('/', async (req, res) => {
   transporter.sendMail(mailOptions, (err, response) => {
     if (err) {
       console.error('there was an error: ', err);
+      res.status(403).json('error logging in into email service, please check email provider security settings or credentials')
     } else {
       console.log('here is the res: ', response);
-      res.status(403).json('error logging in into email service, please check email provider security settings or credentials')
+      res.status(200).json('recovery email sent');
     }
   })
   } catch (err) {
@@ -65,6 +66,5 @@ router.post('/', async (req, res) => {
     })
   }
 })
-
 
 module.exports = router
